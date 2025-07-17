@@ -1,4 +1,4 @@
-const SweetShop = require("../src/sweetshop");
+const SweetShop = require("../src/sweetShop");
 
 describe("SweetShop - addSweet", () => {
   test("should add a sweet to the shop", () => {
