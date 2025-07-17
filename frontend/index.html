@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Shop Management</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="main-bg">
+      <div class="container">
+        <h1 class="title" style="text-align: center;">Sweet Shop Management</h1>
+        <section class="card form-card">
+          <h2 class="form-title">Add New Sweet</h2>
+          <form id="addSweetForm" class="form-grid">
+            <input
+              type="text"
+              name="name"
+              id="nameInput"
+              placeholder="Name"
+              required
+            />
+            <select name="category" id="categorySelect"></select>
+            <input
+              type="number"
+              name="price"
+              id="priceInput"
+              placeholder="Price"
+              required
+              min="0"
+            />
+            <input
+              type="number"
+              name="quantity"
+              id="quantityInput"
+              placeholder="Quantity"
+              required
+              min="0"
+            />
+            <input
+              type="text"
+              id="newCategoryInput"
+              placeholder="Or create new category..."
+            />
+            <button type="submit" class="add-btn">Add Sweet</button>
+          </form>
+        </section>
+        <div class="search-bar grid grid-cols-1 md:grid-cols-4 gap-2 mb-2">
+          <input type="text" id="searchName" placeholder="Search by name..." />
+          <input
+            type="text"
+            id="searchCategory"
+            placeholder="Search by category..."
+          />
+          <input
+            type="number"
+            id="searchMinPrice"
+            placeholder="Min price"
+            min="0"
+          />
+          <input
+            type="number"
+            id="searchMaxPrice"
+            placeholder="Max price"
+            min="0"
+          />
+        </div>
+        <div class="mb-4 flex gap-2">
+          <div class="sort-row">
+            <select id="sortSelect" class="input-field">
+              <option value="">Sort by...</option>
+              <option value="PRICE_LOW_TO_HIGH">Price: Low to High</option>
+              <option value="PRICE_HIGH_TO_LOW">Price: High to Low</option>
+              <option value="QUANTITY_LOW_TO_HIGH">
+                Quantity: Low to High
+              </option>
+              <option value="QUANTITY_HIGH_TO_LOW">
+                Quantity: High to Low
+              </option>
+            </select>
+          </div>
+        </div>
+        <section>
+          <div id="sweetsGrid" class="grid"></div>
+        </section>
+      </div>
+    </main>
+    <div id="modal" class="modal hidden"></div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>

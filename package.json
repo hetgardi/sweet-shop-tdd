@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "concurrently \"nodemon src/sweetshop.js\" \"live-server frontend --port=3000 --open=index.html\"",
+    "start": "concurrently \"node src/sweetshop.js\" \"live-server frontend --port=3000 --open=index.html\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^30.0.4"
+    "concurrently": "^9.2.0",
+    "jest": "^30.0.4",
+    "live-server": "^1.2.2"
   }
 }
