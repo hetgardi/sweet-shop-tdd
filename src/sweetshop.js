@@ -20,7 +20,7 @@ const sweetShop = (() => {
     sweets.push({ ...sweet });
   };
 
-  const getAllSweets = () => sweets;
+  const getAllSweets = () => [...sweets];
 
   const reset = () => {
     sweets = [];
