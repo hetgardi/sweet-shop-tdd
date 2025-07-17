@@ -84,6 +84,22 @@ const sweetShop = (() => {
     });
   };
 
+  const sortSweets = (condition) => {
+    const sorted = [...sweets];
+
+    if (condition === "PRICE_LOW_TO_HIGH") {
+      return sorted.sort((a, b) => a.price - b.price);
+    } else if (condition === "PRICE_HIGH_TO_LOW") {
+      return sorted.sort((a, b) => b.price - a.price);
+    } else if (condition === "QUANTITY_LOW_TO_HIGH") {
+      return sorted.sort((a, b) => a.quantity - b.quantity);
+    } else if (condition === "QUANTITY_HIGH_TO_LOW") {
+      return sorted.sort((a, b) => b.quantity - a.quantity);
+    } else {
+      return sorted;
+    }
+  };
+
   return {
     addSweet,
     getAllSweets,
@@ -91,6 +107,7 @@ const sweetShop = (() => {
     updateSweet,
     deleteSweet,
     searchSweets,
+    sortSweets,
   };
 })();
 
