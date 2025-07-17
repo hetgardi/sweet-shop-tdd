@@ -115,6 +115,18 @@ const sweetShop = (() => {
     sweets[index].quantity -= amount;
   };
 
+  const restockSweet = (id, amount) => {
+    const index = sweets.findIndex((s) => s.id === id);
+    if (index === -1) throw new Error("Sweet not found");
+
+    if (typeof amount !== "number" || amount <= 0) {
+      throw new Error("Invalid restock amount");
+    }
+
+    sweets[index].quantity += amount;
+  };
+
+
   return {
     addSweet,
     getAllSweets,
@@ -124,6 +136,7 @@ const sweetShop = (() => {
     searchSweets,
     sortSweets,
     purchaseSweet,
+    restockSweet,
   };
 })();
 
