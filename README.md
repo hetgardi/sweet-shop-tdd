@@ -58,7 +58,7 @@ Each scenario was translated into a test case before implementation.
 
 ---
 
-## 🚀 Features
+##  Features
 
 * **Sweet Management**: Add, edit, delete sweets
 * **Inventory Tracking**: Real-time stock, low-stock alerts
@@ -76,11 +76,10 @@ Each scenario was translated into a test case before implementation.
 
 | Area         | Technology                |
 | ------------ | ------------------------- |
-| Frontend     | HTML5, CSS3, TailwindCSS  |
+| Frontend     | HTML5, CSS3               |
 | Logic        | JavaScript (ES6+)         |
 | Testing      | Jest                      |
 | Dev Tools    | Node.js, npm, Live Server |
-| Code Quality | ESLint, Prettier          |
 | Version Ctrl | Git & GitHub              |
 
 ---
@@ -143,7 +142,7 @@ npm test
 
 ---
 
-## 📊 Test Report Summary
+## Test Report Summary
 
 > **All 49 unit tests passed ✅**
 
