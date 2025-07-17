@@ -63,12 +63,34 @@ const sweetShop = (() => {
     sweets.splice(idx, 1);
   };
 
+  const searchSweets = (filters = {}) => {
+    const { name, category, minPrice, maxPrice } = filters;
+    return sweets.filter((sweet) => {
+      const matchName = name
+        ? sweet.name.toLowerCase().includes(name.toLowerCase())
+        : true;
+
+      const matchCategory = category
+        ? sweet.category.toLowerCase().includes(category.toLowerCase())
+        : true;
+
+      const matchMinPrice =
+        typeof minPrice === "number" ? sweet.price >= minPrice : true;
+
+      const matchMaxPrice =
+        typeof maxPrice === "number" ? sweet.price <= maxPrice : true;
+
+      return matchName && matchCategory && matchMinPrice && matchMaxPrice;
+    });
+  };
+
   return {
     addSweet,
     getAllSweets,
     reset,
     updateSweet,
     deleteSweet,
+    searchSweets,
   };
 })();
 
