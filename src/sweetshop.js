@@ -53,9 +53,14 @@ const sweetShop = (() => {
       newSweet.category = updates.category;
     }
 
-    
     const idx = sweets.findIndex((s) => s.id === id);
     sweets[idx] = newSweet;
+  };
+
+  const deleteSweet = (id) => {
+    const idx = sweets.findIndex((s) => s.id === id);
+    if (idx === -1) throw new Error("Sweet not found");
+    sweets.splice(idx, 1);
   };
 
   return {
@@ -63,6 +68,7 @@ const sweetShop = (() => {
     getAllSweets,
     reset,
     updateSweet,
+    deleteSweet,
   };
 })();
 
